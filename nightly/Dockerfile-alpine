@@ -59,7 +59,7 @@ LABEL org.opencontainers.image.url=https://caddyserver.com
 LABEL org.opencontainers.image.documentation=https://caddyserver.com/docs
 LABEL org.opencontainers.image.vendor="Light Code Labs"
 LABEL org.opencontainers.image.licenses=Apache-2.0
-LABEL org.opencontainers.image.source="https://github.com/ZhangXavier/caddy-docker"
+LABEL org.opencontainers.image.source="https://github.com/z-xavier/caddy-docker"
 
 EXPOSE 80
 EXPOSE 443
