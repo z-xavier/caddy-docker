@@ -44,15 +44,15 @@ jobs:
           push: true
           tags: |
             zxavier/caddy:latest
-            ghcr.io/zhangxavier/caddy:latest
+            ghcr.io/z-xavier/caddy:latest
             zxavier/caddy:mainline
-            ghcr.io/zhangxavier/caddy:mainline
+            ghcr.io/z-xavier/caddy:mainline
             zxavier/caddy:2
-            ghcr.io/zhangxavier/caddy:2
+            ghcr.io/z-xavier/caddy:2
             zxavier/caddy:2.10
             zxavier/caddy:2.10.0
-            ghcr.io/zhangxavier/caddy:2.10
-            ghcr.io/zhangxavier/caddy:2.10.0
+            ghcr.io/z-xavier/caddy:2.10
+            ghcr.io/z-xavier/caddy:2.10.0
       -
          name: Update Hub description
          uses: peter-evans/dockerhub-description@v4

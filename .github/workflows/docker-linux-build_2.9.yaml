@@ -45,8 +45,8 @@ jobs:
           tags: |
             zxavier/caddy:2.9
             zxavier/caddy:2.9.1
-            ghcr.io/zhangxavier/caddy:2.9
-            ghcr.io/zhangxavier/caddy:2.9.1
+            ghcr.io/z-xavier/caddy:2.9
+            ghcr.io/z-xavier/caddy:2.9.1
       -
          name: Update repo description
          uses: peter-evans/dockerhub-description@v4

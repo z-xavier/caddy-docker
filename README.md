@@ -25,7 +25,7 @@
 
 - 建议使用 `latest` 版本，与 `caddy` 的 `latest` 版本相同。
 
-- 同时提供 Docker Hub 与 Github 的 package 地址。Docker Hub:[hub.docker.com/r/zxavier/caddy](https://hub.docker.com/r/zxavier/caddy), Github 容器地址：[ghcr.io/ZhangXavier/caddy](https://ghcr.io/ZhangXavier/caddy)，两地址版本号相同。
+- 同时提供 Docker Hub 与 Github 的 package 地址。Docker Hub:[hub.docker.com/r/zxavier/caddy](https://hub.docker.com/r/zxavier/caddy), Github 容器地址：[ghcr.io/z-xavier/caddy](https://ghcr.io/z-xavier/caddy)，两地址版本号相同。
 
 - ⚠️`mainline` 版本为最新发布版，包括 `rc` 与 `bate` 版，故请在低风险环境中使用。
 
