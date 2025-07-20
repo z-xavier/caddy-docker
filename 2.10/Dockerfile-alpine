@@ -7,7 +7,8 @@ RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare@006ebb07b34945b53dd0bb31a7a823ef2e8ccc56 \
     --with github.com/caddy-dns/duckdns@86ea11d23d37c85f3900a8c3093405e2bcd68d2e \
     --with github.com/hairyhenderson/caddy-teapot-module@c51208f2ce6c7a99c88afd685aaa56e92e9a8e80 \
-    --with github.com/ueffel/caddy-brotli@3ddb0fc0da7f345e168008d396c9b2fa55985d4b
+    --with github.com/ueffel/caddy-brotli@3ddb0fc0da7f345e168008d396c9b2fa55985d4b \
+    --with github.com/mholt/caddy-l4@4d3c80e89c5f80438a3e048a410d5543ff5fb9f4
 
 FROM caddy:2.10-alpine
 
