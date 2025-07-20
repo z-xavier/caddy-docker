@@ -24,7 +24,8 @@ RUN xcaddy build ${CADDY_VERSION} \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/caddy-dns/duckdns \
     --with github.com/hairyhenderson/caddy-teapot-module \
-    --with github.com/ueffel/caddy-brotli
+    --with github.com/ueffel/caddy-brotli \
+    --with github.com/mholt/caddy-l4
 
 FROM alpine
 
