@@ -1,7 +1,7 @@
 FROM caddy:2.10-builder-alpine AS builder
 
 ENV CADDY_VERSION=v2.10.2
-ENV XCADDY_GO_BUILD_FLAGS="-ldflags '-w -s'"
+ENV GOEXPERIMENT=greenteagc,jsonv2
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare@f589a18c0f5d2ce871cc907c0567b2f8ef20c4c0 \

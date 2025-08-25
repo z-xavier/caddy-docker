@@ -10,10 +10,16 @@ WORKDIR /build
 ENV XCADDY_VERSION=latest
 # Configures xcaddy to build with this version of Caddy
 ENV CADDY_VERSION=master
+# Enables the Go race detector in the build.
+ENV XCADDY_RACE_DETECTOR=1
+# Enables the DWARF debug information in the build.
+ENV XCADDY_DEBUG=1
 # Configures xcaddy to not clean up post-build (unnecessary in a container)
 ENV XCADDY_SKIP_CLEANUP=1
 # Sets capabilities for output caddy binary to be able to bind to privileged ports
 ENV XCADDY_SETCAP=1
+
+ENV GOEXPERIMENT=greenteagc,jsonv2
 
 RUN set -eux; \
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@${XCADDY_VERSION}; \
