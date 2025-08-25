@@ -17,7 +17,7 @@ ENV XCADDY_SKIP_CLEANUP=1
 # Sets capabilities for output caddy binary to be able to bind to privileged ports
 ENV XCADDY_SETCAP=1
 
-ENV GOEXPERIMENT=greenteagc,jsonv2
+ENV GOEXPERIMENT=greenteagc
 
 RUN set -eux; \
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@${XCADDY_VERSION}; \
