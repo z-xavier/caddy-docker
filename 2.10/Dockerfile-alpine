@@ -1,19 +1,19 @@
 FROM caddy:2.10-builder-alpine AS builder
 
-ENV CADDY_VERSION=v2.10.0
+ENV CADDY_VERSION=v2.10.2
 ENV XCADDY_GO_BUILD_FLAGS="-ldflags '-w -s'"
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare@006ebb07b34945b53dd0bb31a7a823ef2e8ccc56 \
+    --with github.com/caddy-dns/cloudflare@f589a18c0f5d2ce871cc907c0567b2f8ef20c4c0 \
     --with github.com/caddy-dns/duckdns@86ea11d23d37c85f3900a8c3093405e2bcd68d2e \
     --with github.com/hairyhenderson/caddy-teapot-module@c51208f2ce6c7a99c88afd685aaa56e92e9a8e80 \
-    --with github.com/ueffel/caddy-brotli@3ddb0fc0da7f345e168008d396c9b2fa55985d4b \
-    --with github.com/mholt/caddy-l4@4d3c80e89c5f80438a3e048a410d5543ff5fb9f4
+    --with github.com/ueffel/caddy-brotli@dfd1bbe545f74a749a7b0b503468d1c858587420 \
+    --with github.com/mholt/caddy-l4@d6199b698240eb9b8d663659c65899ff72466b7d
 
 FROM caddy:2.10-alpine
 
-ENV CADDY_VERSION=v2.10.0
+ENV CADDY_VERSION=v2.10.2
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
-LABEL org.opencontainers.image.version=v2.10.0
+LABEL org.opencontainers.image.version=v2.10.2
