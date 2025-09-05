@@ -50,9 +50,9 @@ jobs:
             zxavier/caddy:2
             ghcr.io/z-xavier/caddy:2
             zxavier/caddy:2.10
-            zxavier/caddy:2.10.0
+            zxavier/caddy:2.10.2
             ghcr.io/z-xavier/caddy:2.10
-            ghcr.io/z-xavier/caddy:2.10.0
+            ghcr.io/z-xavier/caddy:2.10.2
       -
          name: Update Hub description
          uses: peter-evans/dockerhub-description@v4
