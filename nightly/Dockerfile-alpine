@@ -25,7 +25,7 @@ RUN set -eux; \
     chmod +x /usr/bin/xcaddy
 
 RUN xcaddy build ${CADDY_VERSION} \
-    --with github.com/z-xavier/caddy-dns-cloudflare \
+    --with github.com/caddy-dns/cloudflare \
     --with github.com/caddy-dns/duckdns \
     --with github.com/hairyhenderson/caddy-teapot-module \
     --with github.com/ueffel/caddy-brotli \

@@ -4,11 +4,11 @@ ENV CADDY_VERSION=v2.10.2
 ENV GOEXPERIMENT=greenteagc
 
 RUN xcaddy build \
-    --with github.com/z-xavier/caddy-dns-cloudflare@0329c4d85140243cc759f6887926dd4957f6cc89 \
+    --with github.com/caddy-dns/cloudflare@2fc25ee62f40fe21b240f83ab2fb6e2be6dbb953 \
     --with github.com/caddy-dns/duckdns@86ea11d23d37c85f3900a8c3093405e2bcd68d2e \
     --with github.com/hairyhenderson/caddy-teapot-module@c51208f2ce6c7a99c88afd685aaa56e92e9a8e80 \
     --with github.com/ueffel/caddy-brotli@dfd1bbe545f74a749a7b0b503468d1c858587420 \
-    --with github.com/mholt/caddy-l4@d6199b698240eb9b8d663659c65899ff72466b7d
+    --with github.com/mholt/caddy-l4@66170bec9f4d6a015e31b04545afa1f90a873b3f
 
 FROM caddy:2.10-alpine
 
