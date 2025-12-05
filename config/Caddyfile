@@ -21,7 +21,7 @@
 		Content-Security-Policy "default-src 'self'; frame-ancestors 'none'"
 		X-Frame-Options "DENY"
 		X-Robots-Tag "noindex, nofollow"
-		Referrer-Policy "no-referrer"
+		Referrer-Policy "strict-origin-when-cross-origin"
 		-Server
 		-Via
 	}
