@@ -2,17 +2,19 @@
 
 [![Build and Publish 2.9 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.9.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.9.yaml)
 [![Build and Publish 2.10 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.10.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.10.yaml)
+[![Build and Publish 2.11 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.11.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.11.yaml)
+[![Build and Publish Nightly Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_nightly.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_nightly.yaml)
 
 这是一个 caddy2 docker image，编译加入了如下组件：
 
 - [caddy-dns/cloudflare](https://github.com/caddy-dns/cloudflare)
 - [caddy-dns/duckdns](https://github.com/caddy-dns/duckdns)
 - [hairyhenderson/caddy-teapot-module](https://github.com/hairyhenderson/caddy-teapot-module)
-- [ueffel/caddy-brotli](https://github.com/ueffel/caddy-brotli)
 - [mholt/caddy-l4](https://github.com/mholt/caddy-l4)
+- - ~~[ueffel/caddy-brotli](https://github.com/ueffel/caddy-brotli) (在 `2.11` 版本中已经去除该组件)~~
 - ~~[mastercactapus/caddy2-proxyprotocol](https://github.com/mastercactapus/caddy2-proxyprotocol)~~
 - ~~[caddyserver/nginx-adapter](https://github.com/caddyserver/nginx-adapter) (在 `2.4` 版本中已经去除该组件)~~
-- ~~[greenpau/caddy-security](https://github.com/greenpau/caddy-security) (由于我使用了 [authelia](https://www.authelia.com/) , 故在 `2.7.4` 版本中已经去除该组件)~~
+- ~~[greenpau/caddy-security](https://github.com/greenpau/caddy-security) (由于使用了 [authelia](https://www.authelia.com/) , 故在 `2.7.4` 版本中已经去除该组件)~~
 
 ## 已知的问题
 
@@ -32,16 +34,20 @@
 
 - `v2.3.0` 版本以及后续版本提示如下：
 
-    1. 设置：net.core.rmem_max。这个值在 linux 上很小，对于高带宽 `quic` 传输来说需要调整大一些。看这里：[quic-go/wiki/UDP-Receive-Buffer-Size](https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size)，Linux 调整（Docker的host模式）可以参考连接中的内容。对于 Docker，如果不是使用的host 模式，对于 docker-compose 调整见这里：[compose-file-v2/sysctls](https://docs.docker.com/compose/compose-file/compose-file-v2/#sysctls)，需要 V2.1 以上版本的 compose。对于 docker run 调整见这里：[docker-run/sysctls](https://docs.docker.com/engine/reference/commandline/run/#configure-namespaced-kernel-parameters-sysctls-at-runtime)。在 caddy 日志的提示如下：
+    1. 设置：net.core.rmem_max。这个值在 linux 上很小，对于高带宽 `quic` 传输来说需要调整大一些。看这里：[quic-go/wiki/UDP-Receive-Buffer-Size](https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes)。其对应的在 caddy 日志的提示如下：
+
         > failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB). See [https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size](https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size) for details.
 
-    2. remote_ip 默认情况下，匹配器不再读取 X-Forwarded-For 标头。这是未记录的行为，并且是不安全的默认值。如果您碰巧依赖于此，请启用 forwarded（在 Caddyfile 中，仅将其 forwarded 作为范围之前的第一个参数）以保持该行为。
+       1. 针对，Linux 调整（Docker的host模式）可参考连接中的内容。并可创建 /etc/sysctl.d/99-buffer-size.conf, 并在其中加入。使得其在重启后也保持生效。
 
-    3. `️experimental_http3` 已经不在 `Caddyfile` 的全局选项中了，如果需要使用的话要在 Json 里设置：'servers > protocol > experimental_http3'。在 caddy 日志的提示如下：
-
-        ``` sh
-            [WARNING][caddyfile] :0: the 'experimental_http3' global option is deprecated, please use the 'servers > protocol > experimental_http3' option instead
+        ``` conf
+            net.core.rmem_max = 7500000
+            net.core.wmem_max = 7500000
         ```
+
+        2. 对于 docker-compose 调整见这里：[compose-file-v2/sysctls](https://docs.docker.com/compose/compose-file/compose-file-v2/#sysctls)，需要 V2.1 以上版本的 compose。对于 docker run 调整见这里：[docker-run/sysctls](https://docs.docker.com/engine/reference/commandline/run/#configure-namespaced-kernel-parameters-sysctls-at-runtime)。
+
+    2. remote_ip 默认情况下，匹配器不再读取 X-Forwarded-For 标头。这是未记录的行为，并且是不安全的默认值。如果您碰巧依赖于此，请启用 forwarded（在 Caddyfile 中，仅将其 forwarded 作为范围之前的第一个参数）以保持该行为。
 
 ## 鸣谢
 
@@ -51,7 +57,6 @@
 - [caddy-dns/cloudflare](https://github.com/caddy-dns/cloudflare)
 - [caddy-dns/duckdns](https://github.com/caddy-dns/duckdns)
 - [hairyhenderson/caddy-teapot-module](https://github.com/hairyhenderson/caddy-teapot-module)
-- [ueffel/caddy-brotli](https://github.com/ueffel/caddy-brotli)
 - [mholt/caddy-l4](https://github.com/mholt/caddy-l4)
 
 ## License
