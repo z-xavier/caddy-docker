@@ -1,6 +1,6 @@
 FROM caddy:2-builder-alpine AS builder
 
-ENV CADDY_VERSION=v2.11.0-beta.1
+ENV CADDY_VERSION=v2.11.0-beta.2
 ENV GOEXPERIMENT=greenteagc
 
 RUN xcaddy build \
@@ -11,8 +11,8 @@ RUN xcaddy build \
 
 FROM caddy:2-alpine
 
-ENV CADDY_VERSION=v2.11.0-beta.1
+ENV CADDY_VERSION=v2.11.0-beta.2
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
-LABEL org.opencontainers.image.version=v2.11.0-beta.1
+LABEL org.opencontainers.image.version=v2.11.0-beta.2
