@@ -45,12 +45,16 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
+            zxavier/caddy:latest
+            ghcr.io/z-xavier/caddy:latest
             zxavier/caddy:mainline
             ghcr.io/z-xavier/caddy:mainline
+            zxavier/caddy:2
+            ghcr.io/z-xavier/caddy:2
             zxavier/caddy:2.11
-            zxavier/caddy:2.11.0-beta.2
+            zxavier/caddy:2.11.1
             ghcr.io/z-xavier/caddy:2.11
-            ghcr.io/z-xavier/caddy:2.11.0-beta.2
+            ghcr.io/z-xavier/caddy:2.11.1
       -
          name: Update Hub description
          uses: peter-evans/dockerhub-description@v5

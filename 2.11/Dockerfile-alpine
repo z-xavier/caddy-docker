@@ -1,18 +1,17 @@
 FROM caddy:2-builder-alpine AS builder
 
-ENV CADDY_VERSION=v2.11.0-beta.2
-ENV GOEXPERIMENT=greenteagc
+ENV CADDY_VERSION=v2.11.1
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare \
-    --with github.com/caddy-dns/duckdns \
-    --with github.com/hairyhenderson/caddy-teapot-module \
-    --with github.com/mholt/caddy-l4
+    --with github.com/caddy-dns/cloudflare@6dc1fbb7e925b0da6736780db2e90f4816b79ab7 \
+    --with github.com/caddy-dns/duckdns@86ea11d23d37c85f3900a8c3093405e2bcd68d2e \
+    --with github.com/hairyhenderson/caddy-teapot-module@23a3325ee2aef103254c04efa025b6ecd1bd2dfe \
+    --with github.com/mholt/caddy-l4@eca560d759c9378bda81445b9f0f1a3aaec98b5f
 
 FROM caddy:2-alpine
 
-ENV CADDY_VERSION=v2.11.0-beta.2
+ENV CADDY_VERSION=v2.11.1
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
-LABEL org.opencontainers.image.version=v2.11.0-beta.2
+LABEL org.opencontainers.image.version=v2.11.1

@@ -45,12 +45,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-            zxavier/caddy:latest
-            ghcr.io/z-xavier/caddy:latest
-            zxavier/caddy:mainline
-            ghcr.io/z-xavier/caddy:mainline
-            zxavier/caddy:2
-            ghcr.io/z-xavier/caddy:2
             zxavier/caddy:2.10
             zxavier/caddy:2.10.2
             ghcr.io/z-xavier/caddy:2.10
