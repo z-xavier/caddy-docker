@@ -1,6 +1,5 @@
 # caddy2-docker
 
-[![Build and Publish 2.9 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.9.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.9.yaml)
 [![Build and Publish 2.10 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.10.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.10.yaml)
 [![Build and Publish 2.11 Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.11.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_2.11.yaml)
 [![Build and Publish Nightly Docker Linux image](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_nightly.yaml/badge.svg)](https://github.com/z-xavier/caddy-docker/actions/workflows/docker-linux-build_nightly.yaml)
