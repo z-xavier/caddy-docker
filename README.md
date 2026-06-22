@@ -8,6 +8,7 @@
 
 - [caddy-dns/cloudflare](https://github.com/caddy-dns/cloudflare)
 - [caddy-dns/duckdns](https://github.com/caddy-dns/duckdns)
+- [spaaleks/caddy-dns-technitium](https://github.com/spaaleks/caddy-dns-technitium)
 - [hairyhenderson/caddy-teapot-module](https://github.com/hairyhenderson/caddy-teapot-module)
 - [mholt/caddy-l4](https://github.com/mholt/caddy-l4)
 - - ~~[ueffel/caddy-brotli](https://github.com/ueffel/caddy-brotli) (chrome 已支持 zstd 许久, zstd 在同等压缩率下相比 br 性能更好, 在 `2.11` 版本中已经去除该组件)~~
@@ -55,6 +56,7 @@
 - [caddy-docker](https://github.com/caddyserver/caddy-docker)
 - [caddy-dns/cloudflare](https://github.com/caddy-dns/cloudflare)
 - [caddy-dns/duckdns](https://github.com/caddy-dns/duckdns)
+- [spaaleks/caddy-dns-technitium](https://github.com/spaaleks/caddy-dns-technitium)
 - [hairyhenderson/caddy-teapot-module](https://github.com/hairyhenderson/caddy-teapot-module)
 - [mholt/caddy-l4](https://github.com/mholt/caddy-l4)
 
