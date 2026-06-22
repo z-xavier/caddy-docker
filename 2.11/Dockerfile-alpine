@@ -5,6 +5,7 @@ ENV CADDY_VERSION=v2.11.3
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare@a8737d095ad5a48ca031cea6ab704057dbc2d250 \
     --with github.com/caddy-dns/duckdns@86ea11d23d37c85f3900a8c3093405e2bcd68d2e \
+    --with github.com/spaaleks/caddy-dns-technitium@d05607ea7d91ac089f6df70a30b6326e12957e5b \
     --with github.com/hairyhenderson/caddy-teapot-module@a48db40766fbf1c2fed50dd5e2c1681895499757 \
     --with github.com/mholt/caddy-l4@45e9c728448b3109dff3e342321a3ad3eda5de64
 
