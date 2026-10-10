@@ -1,6 +1,6 @@
 FROM caddy:2-builder-alpine AS builder
 
-ENV CADDY_VERSION=v2.11.6
+ENV CADDY_VERSION=v2.11.7
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare@a8737d095ad5a48ca031cea6ab704057dbc2d250 \
@@ -11,8 +11,8 @@ RUN xcaddy build \
 
 FROM caddy:2-alpine
 
-ENV CADDY_VERSION=v2.11.6
+ENV CADDY_VERSION=v2.11.7
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
-LABEL org.opencontainers.image.version=v2.11.6
+LABEL org.opencontainers.image.version=v2.11.7
